@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "domovyk"
+version = "0.0.1"
+authors = [
+  { name="Ian Goodale", email="ian.goodale@austin.utexas.edu" },
+]
+description = "A tool to easily transliterate text to and from various Cyrillic alphabets."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "nltk == 3.6.5",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ian-nai/domovyk"
+"Bug Tracker" = "https://github.com/ian-nai/domovyk/issues"
