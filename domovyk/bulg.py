@@ -142,31 +142,7 @@ def bulg_translit(input):
             list_of_translated.append(''.join(word_list))
         translated_full.append(''.join(list_of_translated))
 
-        for x in translated_full:
-            word_list = re.split(r'(\s+)', x)
-
-        new_word_list = []
-        new_translated_full = []
-
-        for word in word_list:
-            if word[-1] == 'Ŭ':
-                temp_list = list(word)
-                temp_list[-1] = '"'
-                new_string = ''.join(temp_list)
-                word = new_string
-                new_word_list.append(word)
-            elif word[-1] == 'ŭ':
-                temp_list = list(word)
-                temp_list[-1] = '"'
-                new_string = ''.join(temp_list)
-                word = new_string
-                new_word_list.append(word)
-            else:
-                new_word_list.append(word)
-
-        new_translated_full.append(''.join(new_word_list))
-
-        transliterated_sents = ' '.join(new_translated_full)
+        transliterated_sents = ' '.join(translated_full)
         return transliterated_sents
 
     elif isinstance(input, list):
@@ -188,62 +164,8 @@ def bulg_translit(input):
                 list_of_translated.append(''.join(word_list))
             translated_full.append(''.join(list_of_translated))
 
-        word_list = []
-        for x in translated_full:
-            word_list.append(re.split(r'(\s+)', x))
-
-        list_of_translated2 = []
-        new_translated_full = []
-
-        for word in word_list:
-            list_of_translated2.append(word)
-
-        for w in list_of_translated2:
-            new_word_list = []
-            for p in w:
-                punctuation = ['.', ',', ':', '-', "'"]
-                if p[-1] not in punctuation:
-                    if p[-1] == 'Ŭ':
-                        temp_list = list(p)
-                        temp_list[-1] = '"'
-                        new_string = ''.join(temp_list)
-                        word = new_string
-                        new_word_list.append(p)
-                    elif p[-1] == 'ŭ':
-                        temp_list = list(p)
-                        temp_list[-1] = '"'
-                        new_string = ''.join(temp_list)
-                        word = new_string
-                        new_word_list.append(p)
-                    else:
-                        new_word_list.append(p)
-                elif p[-1] in punctuation:
-                    if p[-2] == 'Ŭ':
-                        temp_list = list(p)
-                        temp_list[-2] = '"'
-                        new_string = ''.join(temp_list)
-                        word = new_string
-                        new_word_list.append(p)
-                    elif p[-2] == 'ŭ':
-                        temp_list = list(p)
-                        temp_list[-2] = '"'
-                        new_string = ''.join(temp_list)
-                        p = new_string
-                        new_word_list.append(p)
-                    else:
-                        new_word_list.append(p)
-                else:
-                    new_word_list.append(p)
-
-            new_translated_full.append(new_word_list)
-
-        final_list = []
-        for s in new_translated_full:
-            joined = (''.join(s))
-            final_list.append(joined)
-
-    transliterated_sents = ' '.join(final_list)
-    return transliterated_sents
+        transliterated_sents = ' '.join(translated_full)
+        return transliterated_sents
 
 
 # Tokenize a string into sentences and transliterate from the Latin
