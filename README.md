@@ -21,6 +21,7 @@ The package uses the ALA-LC Romanization tables to transliterate each of the fol
 * Belarusian
 * Bulgarian
 * Carpatho-Rusyn
+* Church Slavonic
 * Macedonian
 * Russian
 * Serbian
@@ -46,6 +47,7 @@ The languages can be called in the code using the following abbreviations:
 * Belarusian - 'bel'
 * Bulgarian - 'bulg'
 * Carpatho-Rusyn - 'carp'
+* Church Slavonic - 'church'
 * Macedonian - 'mac'
 * Russian 'rus'
 * Serbian - 'serb'
