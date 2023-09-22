@@ -1,5 +1,5 @@
 import unittest
-from domovyk import bel, bulg, carp, mac, rus, ukr, serb, translit
+from domovyk import bel, bulg, carp, mac, rus, ukr, serb, church, translit
 
 
 class TestClient(unittest.TestCase):
@@ -23,6 +23,9 @@ class TestClient(unittest.TestCase):
 
     serb_var = "Брза вижљаста лија хоће да ђипи преко њушке флегматичног џукца."
     serb_var_sents = "Брза вижљаста лија хоће да ђипи преко њушке флегматичног џукца. Можеш разговарати са мном на српском."
+
+    church_var = "Кни̑ги но́вагѡ завѣ́та, ѿ матѳе́а, ѿ ма́рка."
+    church_var_sents = "Кни̑ги но́вагѡ завѣ́та, ѿ матѳе́а, ѿ ма́рка. Собо́рныѧ посла́нїѧ. Собо́рныѧ посла́нїѧ."
 
     latin_var_sents = "This is a test. And another test."
     latin_var = "This is a test."
@@ -165,6 +168,26 @@ class TestClient(unittest.TestCase):
     def test_latin_to_ukr(self):
         transliterated = ukr.latin_to_ukr(TestClient.latin_var)
         assert transliterated == "Тгic ic а теcт."
+
+    # Church Slavonic Tests
+
+    def test_church_translit_sents(self):
+        transliterated = church.church_translit_sents(TestClient.church_var_sents)
+        assert transliterated[0] == "KnȊhI nóvahō zavě́ta, ō͡t matḟе́a, ō͡t márka."
+        assert transliterated[1] == "Sobórnȳę poslánїę."
+
+    def test_church_translit(self):
+        transliterated = church.church_translit(TestClient.church_var)
+        assert transliterated == "KnȊhI nóvahō zavě́ta, ō͡t matḟе́a, ō͡t márka."
+
+    def test_latin_to_church_sents(self):
+        transliterated = church.latin_to_church_sents(TestClient.latin_var_sents)
+        assert transliterated[0] == "Тгic ic а тecт."
+        assert transliterated[1] == "Анд анотгeр тecт."
+
+    def test_latin_to_church(self):
+        transliterated = church.latin_to_church(TestClient.latin_var)
+        assert transliterated == "Тгic ic а тecт."
 
     # Translit Tests
 
