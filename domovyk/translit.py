@@ -1,4 +1,4 @@
-from domovyk import bel, bulg, carp, mac, rus, ukr, serb
+from domovyk import bel, bulg, carp, mac, rus, ukr, serb, church
 
 
 def transliterate(var, lang):
@@ -10,6 +10,9 @@ def transliterate(var, lang):
         return transliterated
     if lang == 'carp':
         transliterated = carp.carp_translit(var)
+        return transliterated
+    if lang == 'church':
+        transliterated = church.church_translit(var)
         return transliterated
     if lang == 'mac':
         transliterated = mac.mac_translit(var)
@@ -25,6 +28,7 @@ def transliterate(var, lang):
         return transliterated
 
 
+
 def translatinate(var, lang):
     if lang == 'bel':
         translatinated = bel.latin_to_bel(var)
@@ -34,6 +38,9 @@ def translatinate(var, lang):
         return translatinated
     if lang == 'carp':
         translatinated = carp.latin_to_carp(var)
+        return translatinated
+    if lang == 'church':
+        translatinated = church.latin_to_church(var)
         return translatinated
     if lang == 'mac':
         translatinated = mac.latin_to_mac(var)
@@ -59,6 +66,9 @@ def transliterateSents(var, lang):
     if lang == 'carp':
         transliterated = carp.carp_translit_sents(var)
         return transliterated
+    if lang == 'church':
+        transliterated = church.church_translit_sents(var)
+        return transliterated
     if lang == 'mac':
         transliterated = mac.mac_translit_sents(var)
         return transliterated
@@ -82,6 +92,9 @@ def translatinateSents(var, lang):
         return translatinated
     if lang == 'carp':
         translatinated = carp.latin_to_carp_sents(var)
+        return translatinated
+    if lang == 'church':
+        translatinated = church.latin_to_church_sents(var)
         return translatinated
     if lang == 'mac':
         translatinated = mac.latin_to_mac_sents(var)
