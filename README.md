@@ -1,5 +1,5 @@
 # Domovyk
-A package to transliterate various Cyrillic alphabets to and from the Latin alphabet using the American Library Association-Library of Congress Romanization tables.
+A Python package to transliterate various Cyrillic alphabets to and from the Latin alphabet using the American Library Association-Library of Congress Romanization tables.
 <p align="center">
 <img src="https://raw.githubusercontent.com/ian-nai/domovyk/main/domovyk_statue.jpg" alt="domovyk statue" width="300" height="393">
 </p>
